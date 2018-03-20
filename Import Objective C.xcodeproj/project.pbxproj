@@ -12,6 +12,8 @@
 		7FDD5B322060A67400C330AA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7FDD5B302060A67400C330AA /* Main.storyboard */; };
 		7FDD5B342060A67400C330AA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7FDD5B332060A67400C330AA /* Assets.xcassets */; };
 		7FDD5B372060A67400C330AA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7FDD5B352060A67400C330AA /* LaunchScreen.storyboard */; };
+		7FDD5B432060A93900C330AA /* ProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FDD5B412060A93900C330AA /* ProgressHUD.m */; };
+		7FDD5B442060A93900C330AA /* ProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 7FDD5B422060A93900C330AA /* ProgressHUD.bundle */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +24,10 @@
 		7FDD5B332060A67400C330AA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7FDD5B362060A67400C330AA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7FDD5B382060A67400C330AA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7FDD5B3F2060A93800C330AA /* Import Objective C-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Import Objective C-Bridging-Header.h"; sourceTree = "<group>"; };
+		7FDD5B402060A93900C330AA /* ProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProgressHUD.h; sourceTree = "<group>"; };
+		7FDD5B412060A93900C330AA /* ProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProgressHUD.m; sourceTree = "<group>"; };
+		7FDD5B422060A93900C330AA /* ProgressHUD.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = ProgressHUD.bundle; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +60,7 @@
 		7FDD5B2B2060A67400C330AA /* Import Objective C */ = {
 			isa = PBXGroup;
 			children = (
+				7FDD5B3E2060A91C00C330AA /* ProgressHUD */,
 				7FDD5B2C2060A67400C330AA /* AppDelegate.swift */,
 				7FDD5B2E2060A67400C330AA /* ViewController.swift */,
 				7FDD5B302060A67400C330AA /* Main.storyboard */,
@@ -62,6 +69,17 @@
 				7FDD5B382060A67400C330AA /* Info.plist */,
 			);
 			path = "Import Objective C";
+			sourceTree = "<group>";
+		};
+		7FDD5B3E2060A91C00C330AA /* ProgressHUD */ = {
+			isa = PBXGroup;
+			children = (
+				7FDD5B422060A93900C330AA /* ProgressHUD.bundle */,
+				7FDD5B402060A93900C330AA /* ProgressHUD.h */,
+				7FDD5B412060A93900C330AA /* ProgressHUD.m */,
+				7FDD5B3F2060A93800C330AA /* Import Objective C-Bridging-Header.h */,
+			);
+			path = ProgressHUD;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -96,6 +114,7 @@
 				TargetAttributes = {
 					7FDD5B282060A67400C330AA = {
 						CreatedOnToolsVersion = 9.2;
+						LastSwiftMigration = 0920;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -123,6 +142,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7FDD5B442060A93900C330AA /* ProgressHUD.bundle in Resources */,
 				7FDD5B372060A67400C330AA /* LaunchScreen.storyboard in Resources */,
 				7FDD5B342060A67400C330AA /* Assets.xcassets in Resources */,
 				7FDD5B322060A67400C330AA /* Main.storyboard in Resources */,
@@ -136,6 +156,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7FDD5B432060A93900C330AA /* ProgressHUD.m in Sources */,
 				7FDD5B2F2060A67400C330AA /* ViewController.swift in Sources */,
 				7FDD5B2D2060A67400C330AA /* AppDelegate.swift in Sources */,
 			);
@@ -274,12 +295,15 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = M7UE9XQX9P;
 				INFOPLIST_FILE = "Import Objective C/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.thekelvintan.Import-Objective-C";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Import Objective C/ProgressHUD/Import Objective C-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -289,12 +313,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = M7UE9XQX9P;
 				INFOPLIST_FILE = "Import Objective C/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.thekelvintan.Import-Objective-C";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Import Objective C/ProgressHUD/Import Objective C-Bridging-Header.h";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
